@@ -1,0 +1,1 @@
+setup.exe /download configuration-Office365-x86.xml
