@@ -8,11 +8,14 @@
 # MSO_Setup_Helper
 帮助用户在 Windows 系统下快速安装 Microsoft Office 。
 
+## 功能
+1. 安装 Office 365 / 2019 。
+2. 安装 Office 语言包。
+2. 卸载 Office。
+
 ## 使用方法
 1. 请下载最新的 [Release](https://github.com/zhxycn/MSO_Setup_Helper/releases) 并解压。
-
 2. 运行 `Setup.bat`。
-
 3. 按提示操作即可。
 
 ## 推荐
