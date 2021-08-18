@@ -1,1 +1,0 @@
-setup.exe /configure configuration-Office2019Enterprise-x86.xml
