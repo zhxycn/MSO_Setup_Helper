@@ -43,19 +43,19 @@ mode con lines=30 cols=65
 title MSO_Setup_Helper
 echo     MSO_Setup_Helper v1.0.1
 echo.
-echo     按任意键开始，或按 [Ctrl+C] 退出程序！
+echo     按任意键开始，或按 [Ctrl+C] 退出程序。
 pause >nul
 
 :menu
 title 菜单－选择功能
 cls
 echo ---------------------------------------------------------------
-echo     请选择任务。
+echo     请选择任务
 echo ---------------------------------------------------------------
-echo     [A]部署。
-echo     [B]信息。
+echo     [A]部署
+echo     [B]信息
 echo ---------------------------------------------------------------
-echo     [Ctrl+C] 退出。
+echo     [Ctrl+C] 退出
 echo ---------------------------------------------------------------
 echo.
 :menucho
@@ -74,12 +74,12 @@ cls
 title 部署－选择功能
 cls
 echo ---------------------------------------------------------------
-echo     请选择任务。
+echo     请选择任务
 echo ---------------------------------------------------------------
-echo     [A]部署 Office 。
+echo     [A]部署 Office 
 echo ---------------------------------------------------------------
-echo     [Z] 返回上级。
-echo     [Ctrl+C] 退出。
+echo     [Z] 返回上级
+echo     [Ctrl+C] 退出
 echo ---------------------------------------------------------------
 echo.
 :menusetupcho
@@ -98,24 +98,23 @@ cls
 cls
 title 部署 Office 365 / 2019－选择功能
 echo ---------------------------------------------------------------
-echo     请选择任务。
+echo     请选择任务
 echo ---------------------------------------------------------------
-echo     [A]在线安装 Office365 32位。
-echo     [B]在线安装 Office365 64位。
-echo     [C]在线安装 Office2019 32位。
-echo     [D]在线安装 Office2019 64位。
-echo     [E]使用官方安装工具在线安装 Office 365 。
-echo     [F]下载 Office365 32位。
-echo     [G]下载 Office365 64位。
-echo     [H]下载 Office2019 32位。
-echo     [I]下载 Office2019 64位。
-echo     [J]关于 Office 更新通道说明。
-echo     [K]使用官方工具移除 Office。
-echo     [L]安装 Office 语言附件包 32位。
-echo     [M]安装 Office 语言附件包 64位。
+echo     [A]在线安装 Office 365 32 位
+echo     [B]在线安装 Office 365 64 位
+echo     [C]在线安装 Office 2019 32 位
+echo     [D]在线安装 Office 2019 64 位
+echo     [E]下载 Office 365 32 位安装包
+echo     [F]下载 Office 365 64 位安装包
+echo     [G]下载 Office 2019 32 位安装包
+echo     [H]下载 Office 2019 64 位安装包
+echo     [I]关于 Office 更新通道说明
+echo     [J]使用官方工具移除 Office
+echo     [K]安装 Office 语言附件包 32 位
+echo     [L]安装 Office 语言附件包 64 位
 echo ---------------------------------------------------------------
-echo     [Z] 返回上级。
-echo     [Ctrl+C] 退出。
+echo     [Z] 返回上级
+echo     [Ctrl+C] 退出
 echo ---------------------------------------------------------------
 echo.
 :menuofficecho
@@ -134,7 +133,6 @@ if /i "%choice%"=="i" goto start9
 if /i "%choice%"=="j" goto start10
 if /i "%choice%"=="k" goto start11
 if /i "%choice%"=="l" goto start12
-if /i "%choice%"=="m" goto start13
 if /i "%choice%"=="z" goto menusetup
 echo 选择无效，请重新输入
 echo.
@@ -144,9 +142,9 @@ cls
 
 :start1
 cls
-title 在线安装Office365 32位
+title 在线安装Office 365 32 位
 cd /d .\files\
-cmd /k "Setup Office365-x86.bat"
+cmd /k "setup.exe /configure configuration-Office365-x86.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -154,9 +152,9 @@ goto menuoffice
 
 :start2
 cls
-title 在线安装Office365 64位
+title 在线安装Office 365 64 位
 cd /d .\files\
-cmd /k "Setup Office365-x64.bat"
+cmd /k "setup.exe /configure configuration-Office365-x64.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -164,9 +162,9 @@ goto menuoffice
 
 :start3
 cls
-title 在线安装Office2019 32位
+title 在线安装Office 2019 32 位
 cd /d .\files\
-cmd /k "Setup Office2019Enterprise-x86.bat"
+cmd /k "setup.exe /configure configuration-Office2019Enterprise-x86.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -174,9 +172,9 @@ goto menuoffice
 
 :start4
 cls
-title 在线安装Office2019 64位
+title 在线安装Office 2019 64 位
 cd /d .\files\
-cmd /k "Setup Office2019Enterprise-x64.bat"
+cmd /k "setup.exe /configure configuration-Office2019Enterprise-x64.xml
 title 完成!
 echo 完成!
 echo. & pause
@@ -184,14 +182,9 @@ goto menuoffice
 
 :start5
 cls
-title 使用官方安装工具在线安装Office 365
-echo 使用官方安装工具在线安装Office 365
-echo.
-echo 说明：工具为32位，打开后32位系统会直接安装，64位请根据提示自动安装64位
-echo. & pause
-echo 请在弹出窗口完成操作
+title 下载Office 365 32 位
 cd /d .\files\
-cmd /k "setupo365homepremretail.x86.zh-cn_.exe"
+cmd /k "setup.exe /download configuration-Office365-x86.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -199,9 +192,9 @@ goto menuoffice
 
 :start6
 cls
-title 下载Office365 32位
+title 下载Office 365 64 位
 cd /d .\files\
-cmd /k "Download Office365-x86.bat"
+cmd /k "setup.exe /download configuration-Office365-x64.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -209,9 +202,9 @@ goto menuoffice
 
 :start7
 cls
-title 下载Office365 64位
+title 下载Office 2019 32 位
 cd /d .\files\
-cmd /k "Download Office365-x64.bat"
+cmd /k "setup.exe /download configuration-Office2019Enterprise-x86.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -219,9 +212,9 @@ goto menuoffice
 
 :start8
 cls
-title 下载Office2019 32位
+title 下载Office 2019 64 位
 cd /d .\files\
-cmd /k "Download Office2019Enterprise-x86.bat"
+cmd /k "setup.exe /download configuration-Office2019Enterprise-x64.xml"
 title 完成!
 echo 完成!
 echo. & pause
@@ -229,18 +222,8 @@ goto menuoffice
 
 :start9
 cls
-title 下载Office2019 64位
-cd /d .\files\
-cmd /k "Download Office2019Enterprise-x64.bat"
-title 完成!
-echo 完成!
-echo. & pause
-goto menuoffice
-
-:start10
-cls
-title 关于Office更新通道
-echo     关于Office更新通道：
+title 关于 Office 更新通道
+echo     关于 Office 更新通道：
 echo     使用本脚本安装默认为每月通道
 echo     如需更改，请进入files文件夹编辑对应版本xml文件中的更新通道
 echo     文件中会找到 Channel="Monthly"
@@ -260,7 +243,7 @@ echo ---------------------------------------------------------------
 echo. & pause
 goto menuoffice
 
-:start11
+:start10
 cls
 title 使用官方工具移除Office
 echo 请在弹出窗口完成操作
@@ -271,7 +254,7 @@ echo 完成!
 echo. & pause
 goto menuoffice
 
-:start12
+:start11
 cls
 title 安装Office语言附件包 32位
 echo 安装Office语言附件包 32位
@@ -284,7 +267,7 @@ echo 完成!
 echo. & pause
 goto menuoffice
 
-:start13
+:start12
 cls
 title 安装Office语言附件包 64位
 echo 安装Office语言附件包 64位
@@ -306,8 +289,8 @@ echo     更新日期：2021/6/23
 echo     版本：v1.0.1
 echo     (c) zhxy-CN, Released under the MIT License.
 echo ---------------------------------------------------------------
-echo     [Z] 返回上级。
-echo     [Ctrl+C]退出。
+echo     [Z] 返回上级
+echo     [Ctrl+C]退出
 echo ---------------------------------------------------------------
 echo.
 :informationcho
