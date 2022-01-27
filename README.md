@@ -8,6 +8,8 @@
 # MSO_Setup_Helper
 帮助用户在 Windows 系统下快速安装 Microsoft Office 。
 
+菜，大佬勿喷。
+
 ## 功能
 1. 安装 Office 365 / 2019 。
 2. 安装 Office 语言包。
@@ -21,7 +23,7 @@
 ## 推荐
 推荐使用 [Yerong](https://github.com/YerongAI) 开发的 [Office Tool](https://github.com/YerongAI/Office-Tool/releases)，功能更强大。
 
->在不想安装运行库的情况下推荐使用本脚本。
+>Office Tool最新版本已无需单独安装`.NET 6.0 Desktop Runtime x86`运行库，各位自取所需。
 
 ## 关于
 >© [zhxy-CN](https://github.com/zhxycn), Released under the [MIT](./LICENSE) License.
